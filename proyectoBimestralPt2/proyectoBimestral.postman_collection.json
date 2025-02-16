@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "aca5c370-38bd-4baf-ac9d-ac6eb42a8153",
+		"name": "proyectoBimestral",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37956954"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userLoggin",
+									"value": "toñofox",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678A1/a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2636/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarUnCliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:2636/v1/user/getUserById/67b24e4ebb76c645480173ea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"user",
+								"getUserById",
+								"67b24e4ebb76c645480173ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "name",
+								"value": "alfredo",
+								"type": "text"
+							},
+							{
+								"key": "surname",
+								"value": "alfredo",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "AR",
+								"type": "text"
+							},
+							{
+								"key": "email",
+								"value": "alfredor@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "12345678A1/a",
+								"type": "text"
+							},
+							{
+								"key": "phone",
+								"value": "45612407",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "pedro",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "armas",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "parmas",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "parmas@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678A1/a",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "45612407",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2636/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2636/v1/user/getUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"user",
+								"getUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYTA0ZTY4NjBmNDVmZDY5NmFmNGYiLCJ1c2VybmFtZSI6ImptYXJyb3F1aW4iLCJuYW1lIjoiam9zdWUiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzM5NTY1NjkyLCJleHAiOjE3Mzk1NzY0OTJ9.0JxPGuqzapXDtDaHERavNVcOQDxgM8mQ5qaNC_F1yvE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "josue",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "perez",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "jmarroquin",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jmarroquin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678A1/a",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "45612442",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2636/v1/user/updateUser/67afa04e6860f45fd696af4f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"user",
+								"updateUser",
+								"67afa04e6860f45fd696af4f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "eliminarCategoria",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IyNGQ2OWJiNzZjNjQ1NDgwMTczZGQiLCJ1c2VybmFtZSI6InRvw7FvZm94IiwibmFtZSI6ImFsZnJlZG8iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Mzk3Mzg1MjEsImV4cCI6MTczOTc0OTMyMX0.W-Lndx39Ly6H3TThsI9xZUYEeT_SZOzeoGhzDcxrtgk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2636/v1/category/deleteCategory/67b251f5bb76c645480173fb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"category",
+								"deleteCategory",
+								"67b251f5bb76c645480173fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "agregarCategoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IyNGQ2OWJiNzZjNjQ1NDgwMTczZGQiLCJ1c2VybmFtZSI6InRvw7FvZm94IiwibmFtZSI6ImFsZnJlZG8iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Mzk3Mzg1MjEsImV4cCI6MTczOTc0OTMyMX0.W-Lndx39Ly6H3TThsI9xZUYEeT_SZOzeoGhzDcxrtgk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "cuidado personal",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "si",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2636/v1/category/addCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"category",
+								"addCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2636/v1/category/getAllCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"category",
+								"getAllCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unaCategoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2636/v1/category/getOne/67b24da7bb76c645480173e2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"category",
+								"getOne",
+								"67b24da7bb76c645480173e2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IyNGQ2OWJiNzZjNjQ1NDgwMTczZGQiLCJ1c2VybmFtZSI6InRvw7FvZm94IiwibmFtZSI6ImFsZnJlZG8iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Mzk3Mzg1MjEsImV4cCI6MTczOTc0OTMyMX0.W-Lndx39Ly6H3TThsI9xZUYEeT_SZOzeoGhzDcxrtgk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "productos para el hogar",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "si",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2636/v1/category/updateCategory/67b24da7bb76c645480173e2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"category",
+								"updateCategory",
+								"67b24da7bb76c645480173e2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
