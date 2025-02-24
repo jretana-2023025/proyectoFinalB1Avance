@@ -5,7 +5,7 @@ import { generateJwt } from '../../utils/jwt.js'
 
 
 //Register
-export const register = async(req, res)=>{
+export const registerCliente = async(req, res)=>{
     try{    
         //Capturar los datos
         let data = req.body
@@ -15,6 +15,28 @@ export const register = async(req, res)=>{
         user.password = await encrypt(user.password)
         //Asignar rol por defecto
         user.role = 'CLIENT'
+        //asignar profilePicture
+        user.profilePicture = req.file?.filename ?? null //Nullish si es verdad lo de la izquierda, pone ese valor, sino pone el de la derecha
+        //Guardar
+        await user.save()
+        //Responder al usuario
+        return res.send({message: `Registered successfully, can be login with username: ${user.username}`})
+    }catch(err){
+        console.error(err)
+        return res.status(500).send({message: 'General error with user registration', err})
+    }
+}
+
+export const registerAdmin = async(req, res)=>{
+    try{    
+        //Capturar los datos
+        let data = req.body
+        //Crear el el obejto del modelo agregandole los datos capturados
+        let user = new User(data)
+        //Encriptar la password
+        user.password = await encrypt(user.password)
+        //Asignar rol por defecto
+        user.role = 'ADMIN'
         //asignar profilePicture
         user.profilePicture = req.file?.filename ?? null //Nullish si es verdad lo de la izquierda, pone ese valor, sino pone el de la derecha
         //Guardar
