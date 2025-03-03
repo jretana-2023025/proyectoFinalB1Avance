@@ -17,8 +17,19 @@ const productSchema = new Schema(
             type:Number,
             required:[true,'price is required']
             
+        },
+        category:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'category',
+            required:[true,'Category is required']
         }
 
 
+    },
+    {
+        versionKey: false,
+        timestamps: true 
     }
 )
+
+export default model('Product',productSchema)
