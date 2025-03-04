@@ -93,6 +93,64 @@ export const getOneProduct = async (req,res) => {
     }
 }
 
+
+export const getByStock = async (req,res) => {
+    try {
+        let stock = await Product.find({stock:0})
+        if(stock.length===0){
+            return res.send(
+                {
+                    success:true,
+                    message:'All products have units'
+                }
+            )
+        }
+        return res.send(
+            {
+                success:true,
+                message:'Products out os stock',
+                stock
+            }
+        )
+      
+        
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send(
+            {
+                success: false,
+                message: 'General error with getByStock',
+                err
+            }
+        )
+    }
+}
+
+export const mostSelled = async (req,res) => {
+    try {
+        let mostSelled = await Product.find({})
+        .sort({updateCount:-1}).exec()
+        return res.send(
+            {
+                success:true,
+                message: 'These are the most selled products', 
+                mostSelled
+            }
+        )
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send(
+            {
+                success: false,
+                message: 'General error with mostSelled',
+                err
+            }
+        )
+    }
+}
+
+
+
 export const updateProduct = async (req,res) => {
     try {
         const {id} = req.params

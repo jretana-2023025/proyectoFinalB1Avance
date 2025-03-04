@@ -19,10 +19,16 @@ const productSchema = new Schema(
             
         },
         category:{
-            type:mongoose.Schema.Types.ObjectId,
+            type:Schema.Types.ObjectId,
             ref:'category',
             required:[true,'Category is required']
-        }
+        },
+        stock:{
+            type:Number,
+            required:[true,'Stock is required'],
+            maxLength:[55, `Can't be overcome 55 characters`]
+        },
+        updateCount:{type:Number, default:0}
 
 
     },

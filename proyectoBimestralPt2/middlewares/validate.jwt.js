@@ -52,3 +52,24 @@ export const isAdmin=async(req,res,next)=>{
        )
     }
 }
+
+export const isClient=async(req,res,next)=>{
+    try{
+        const{user}=req
+        if(!user || user.role!=='CLIENT') return res.status(403).send(
+            {
+                sucess:false,
+                message:`You dont have access | username: ${user.username}`
+            }
+        )
+        next()
+    }catch(e){
+        console.error
+       return res.status(403).send(
+            {
+                success: false,
+                message:'Internal server error'
+            }
+       )
+    }
+}

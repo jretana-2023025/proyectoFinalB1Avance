@@ -47,10 +47,6 @@ export const updateUserValidator = [
         .optional()
         .notEmpty()
         .custom(notRequiredField),
-    body('profilePicture')
-        .optional()
-        .notEmpty()
-        .custom(notRequiredField),
     body('role')
         .optional()
         .notEmpty()
@@ -58,21 +54,30 @@ export const updateUserValidator = [
     validateErrorsWithoutFiles 
 ]
 
-export const saveAnimalValidator = [
-    body('name', 'Name cannot be empty')
-        .isLength({max: 35})
+export const productsValidator = [
+    body('name','Name cannot be empty')
+        .notEmpty().toLowerCase(),
+    body('description','Description cannot be empty')
         .notEmpty(),
-    body('description', 'description cannot be empty')
-        .optional()
+    body('price','Price cannot be empty')
+       .notEmpty(),
+    body('category','Category cannot be empty')
+        .notEmpty(), 
+    body('stock','stock cannot be empty')
         .notEmpty(),
-    body('age', 'Age cannot be empty')
-        .isLength({max: 10})
-        .notEmpty(),
-    body('type', 'Type cannot be empty')
-        .notEmpty()
-        .toUpperCase(),
-    body('keeper', 'Keeper cannot be empty')
-        .notEmpty()
-        .custom(objectIdValid),
-    validateErrorsWithoutFiles
+        validateErrors
+]
+
+export const productsUpdateValidator=[
+    body('name','Name cannot be empty')
+        .notEmpty().notEmpty().toLowerCase(),
+    body('description','Description cannot be empty')
+        .optional().notEmpty(),
+    body('price','Price cannot be empty')
+        .optional().notEmpty(),
+    body('category','Category cannot be empty')
+        .optional().notEmpty(), 
+    body('stock','stock cannot be empty')
+        .optional().notEmpty(),
+        validateErrors
 ]
