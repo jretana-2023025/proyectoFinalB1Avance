@@ -2,6 +2,7 @@
 
 import { isValidObjectId } from 'mongoose'
 import User from '../src/users/user.model.js'
+import Category from '../src/category/category.model.js'
                                 //parámetro | token
 export const existUsername = async(username, user)=>{
     const alreadyUsername = await User.findOne({username})
@@ -16,6 +17,14 @@ export const existEmail = async(email, user)=>{
         if(alreadyEmail && alreadyEmail._id != user.uid){
         console.error(`Email ${email} is already taken`)
         throw new Error(`Email ${email} is already taken`)
+    }
+}
+
+export const existCategory = async (name,category) => {
+    const alreadycategory = await Category.findOne({name})
+    if(alreadycategory && alreadycategory._id!=category.uid){
+        console.error(`Category ${name} is already exist`)
+        throw new Error(`Category ${name} is already exist`)
     }
 }
 

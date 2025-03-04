@@ -8,6 +8,9 @@ import cors from 'cors'
 import authRoutes from '../src/auth/auth.routes.js'
 import userRoutes from '../src/users/user.routes.js'
 import categoryRoutes from '../src/category/category.routes.js'
+import productRoutes from '../src/products/product.routes.js'
+import carritoRoutes from '../src/carrito/carrito.routes.js'
+import facturaRoutes from '../src/factura/factura.routes.js'
 import { limiter } from '../middlewares/rate.limit.js'
 
 const configs = (app)=>{
@@ -23,8 +26,9 @@ const routes = (app)=>{
     app.use(authRoutes)
     app.use('/v1/user', userRoutes)
     app.use('/v1/category',categoryRoutes)
-
-
+    app.use('/v1/product', productRoutes)
+    app.use('/v1/carrito', carritoRoutes)
+    app.use('/v1/fatura',facturaRoutes)
 }
 
 export const initServer = ()=>{

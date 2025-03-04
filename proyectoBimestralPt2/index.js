@@ -6,3 +6,4 @@ import { connect } from './configs/mongo.js'
 config()
 connect()
 initServer()
+defaultCategory()
